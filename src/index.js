@@ -1,8 +1,19 @@
 const express = require("express")
 const cors = require("cors")
+const { connectDb } = require("./config/db");
+const PORT = 8080;
 const app = express()
 app.use(express.json())
 app.use(cors())
+
+
+app.listen( async () => {
+    try {
+      await connectDb();
+    } catch (error) {
+      console.error("Failed to connect to the database:", error);
+    }
+  });
 
 app.get("/",(req,res)=>{
 return res.status(200).send({message:"welcome to ecommerce api - node"})
