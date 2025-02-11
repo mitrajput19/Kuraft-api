@@ -1,6 +1,6 @@
 
 const Cart = require("../models/cart.model");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwtProvider = require("../config/jwtProvider");
 const CartItem = require("../models/cartItem.model");
 const Product = require("../models/product.model");
