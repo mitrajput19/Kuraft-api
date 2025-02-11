@@ -7,13 +7,13 @@ app.use(express.json())
 app.use(cors())
 
 
-app.listen( async () => {
-    try {
-      await connectDb();
-    } catch (error) {
-      console.error("Failed to connect to the database:", error);
-    }
-  });
+// app.listen( async () => {
+//     try {
+//       await connectDb();
+//     } catch (error) {
+//       console.error("Failed to connect to the database:", error);
+//     }
+//   });
 
 app.get("/",(req,res)=>{
 return res.status(200).send({message:"welcome to ecommerce api - node"})
